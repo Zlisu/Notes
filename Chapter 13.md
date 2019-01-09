@@ -61,7 +61,7 @@ This value is greater than 1, which indicates that the experimental manipulation
 
 
 
-## Procedure
+## One-way repeated-measures designs using R
 1. Enter data
 2. Expore your data
 3. Construct or choose contrasts
@@ -71,7 +71,7 @@ This value is greater than 1, which indicates that the experimental manipulation
 ### data
 R requires long format data for the analysis
 
-```r
+```r{.line-numbers}
 # read data
 bushData <- read.delim("Bushtucker.dat", header = TRUE)
 
@@ -85,6 +85,64 @@ names(longBush) <- c("Participant", "Animal", "Retch")
 longBush$Animal <- factor(longBush$Animal, labels = c("Stick Insect", "Kangaroo Testicle", "Fish Eye", "Witchetty Grub"))
 ```
 
+### ezANOVA
+
+#### model
+```r{.line-numbers}
+library(ez)
+bushModel <- ezANOVA(data = longBush, dv = .(Retch), wid = .(Participant), within = .(Animal), detailed = TRUE, type = 3)
+bushModel
+```
+#### result:
+```
+$`ANOVA`
+       Effect DFn DFd     SSn     SSd          F            p p<.05       ges
+1 (Intercept)   1   7 990.125  17.375 398.899281 1.973536e-07     * 0.8529127
+2      Animal   3  21  83.125 153.375   3.793806 2.557030e-02     * 0.3274249
+
+$`Mauchly's Test for Sphericity`
+  Effect        W          p p<.05
+2 Animal 0.136248 0.04684581     *
+
+$`Sphericity Corrections`
+  Effect       GGe      p[GG] p[GG]<.05       HFe      p[HF] p[HF]<.05
+2 Animal 0.5328456 0.06258412           0.6657636 0.04833061         *
+```
+
+- 首先看Sphericity是否被violated。
+在此例中，W=0.14， p = 0.047 < 0.05, 因此Sphericity is violated.
+
+- 如果Sphericity is violated，就看correction。
+ezANOVA提供了 Greenhouse–Geisser correction $(\hat{\epsilon})$ 和 Huynh–Feldt estimate。(GGe 和 HFe)
+
+- The closer the Greenhouse–Geisser correction, $\hat{\epsilon}$, is to 1, the more homogeneous the variances of differences, and hence the closer the data are to being spherical.
+$(\hat{\epsilon})$ 的下限是 1/(k-1), k is the number of levels of the independent variable。如果 $\hat{\epsilon}$ 的值更接近下限而偏离1，那么it represents a substantial deviation from sphericity.
+- p[GG] and p[HF] 是修正之后的 p value。因为它们一个significant 一个 insignificant，不能做出conclusive的结论，所以要算一下他俩的平均值看看怎么样。the average of the two p-values is (.063 + .048)/2 = .056.
+Therefore, we should probably go with the Greenhouse–Geisser correction and conclude that the F-ratio is non-significant.
+- These data illustrate how important it is to use a valid critical value of F: it can potentially mean the difference between making a Type I error and not. **However, it also highlights how arbitrary it is that we use a .05 level of significance**. These two corrections produce significance values that differ by only .015 and yet they lead to completely opposite conclusions. The decision about ‘significance’ has, in some ways, become rather arbitrary. The F, and hence the size of effect, is unaffected by these corrections and so whether the p falls slightly above or slightly below .05 is less important than how big the effect is. **We might be well advised to look at an effect size to see whether the effect is substantive regardless of its significance.**
+
+**备注：p value 是怎么算出来的**
+1. Independent variable 的 SSn = 83.125 即为 model sum of squares (SS~M~), DFn = 3 是它的自由度, 相除得 mean square for the experimental effect: MS~M~ = 83.125 / 3 = 27.71；
+2. SSd = 153.375 即为 residual sum of squares (SS~R~), DFd = 21 是它的自由度，相除得 error mean squares：MS~R~ = 153.375 / 21 = 7.3。
+3. 再用 MS~M~ / MS~R~ = 27.71 / 7.3 = 3.79 即为 F-ratio的值。
+4. 再通过 DFn = 3 和 DFd = 21 查表得到 critical value, 即可得到p-value。
+
+#### post hoc tests
+```r
+pairwise.t.test(longBush$Retch, longBush$Animal, paired = TRUE, p.adjust.method = "bonferroni")
+```
+Result:
+```
+	Pairwise comparisons using paired t tests 
+
+data:  longBush$Retch and longBush$Animal 
+
+                   Stick Insect Kangaroo\nTesticle Fish Eye
+Kangaroo\nTesticle 0.0121       -                  -       
+Fish Eye           0.0056       1.0000             -       
+Witchetty Grub     1.0000       1.0000             1.0000
+```
+p value < 0.05 说明两组之间的 mean 有显著差别；否则就是没有显著差别。
 
 
 
