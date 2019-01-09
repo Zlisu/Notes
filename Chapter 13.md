@@ -1,3 +1,13 @@
+- [Repeated measure](#repeated-measure)
+  - [Asumptions](#asumptions)
+    - [sphericity](#sphericity)
+      - [Assessing the sphericity](#assessing-the-sphericity)
+  - [Theory](#theory)
+    - [Partitioning variances](#partitioning-variances)
+    - [F-ratio](#f-ratio)
+  - [Procedure](#procedure)
+    - [data](#data)
+
 # Repeated measure
 
 ‘Repeated measures’ is a term used when the same entities participate in all conditions of an experiment or provide data at multiple time points.
@@ -48,6 +58,32 @@ As in independent ANOVA, we use an F-ratio that compares the size of the variati
 $$ F = \frac{MS_M}{MS_R}$$
 
 This value is greater than 1, which indicates that the experimental manipulation had some effect above and beyond the effect of extraneous factors.
+
+
+
+## Procedure
+1. Enter data
+2. Expore your data
+3. Construct or choose contrasts
+4. Compute the ANOVA/multilevel model
+5. Compute contrasts or post hoc tests
+
+### data
+R requires long format data for the analysis
+
+```r
+# read data
+bushData <- read.delim("Bushtucker.dat", header = TRUE)
+
+# reshape data to long format
+longBush <- melt(bushData, id = "participant", measured = c("stick_insect", "kangaroo_testicle", "fish_eye", "witchetty_grub"))
+
+# give the column names
+names(longBush) <- c("Participant", "Animal", "Retch")
+
+# desiganate levels to the categorical variable
+longBush$Animal <- factor(longBush$Animal, labels = c("Stick Insect", "Kangaroo Testicle", "Fish Eye", "Witchetty Grub"))
+```
 
 
 
