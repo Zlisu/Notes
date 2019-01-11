@@ -64,3 +64,52 @@ The other variables are called **free variables**.
 **Uniqueness**:
 如果没有 free variable，这个 system 有**唯一解**。
 如果有 free variable 存在，这个system 有**无数个解**。
+
+## 1.3 Vector
+A matrix with only one column is called a **column vector**, or simply a **vector**.
+Example: $
+\begin{bmatrix}
+3 \\
+-1
+\end{bmatrix}
+$, $
+\begin{bmatrix}
+w_1 \\
+w_2
+\end{bmatrix}
+$
+w~1~ and w~2~ are **real numbers**.
+
+### denotation
+$\reals ^n$: $\reals$ 代表实数； ^n^ 代表 vector 中元素的个数。
+$\begin{bmatrix}3\\-1\end{bmatrix}$ 可以记作(3, -1)。但[3, -1] 代表的是 $1*2$ 的 matrix。
+
+### operation
+#### sum
+
+$$
+\begin{bmatrix}
+1 \\
+-2
+\end{bmatrix}
++ 
+\begin{bmatrix}
+2 \\
+5
+\end{bmatrix}
+{=}
+\begin{bmatrix}
+1 + 2 \\
+-2 + 5
+\end{bmatrix}
+{=}
+\begin{bmatrix}
+3 \\
+3
+\end{bmatrix}
+$$
+
+#### scalar multiple
+Given a vector **u** and a real number c, if $\bold{u}=\begin{bmatrix}3 \\ -1 \end{bmatrix}$ and c = 5, then $c\bold{u}=5\begin{bmatrix}3\\-1\end{bmatrix} {=} \begin{bmatrix}15\\-5\end{bmatrix}$. 
+
+It's called the scalar multiple of **u**.
