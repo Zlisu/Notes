@@ -66,25 +66,19 @@ The other variables are called **free variables**.
 如果有 free variable 存在，这个system 有**无数个解**。
 
 ## 1.3 Vector
+
 A matrix with only one column is called a **column vector**, or simply a **vector**.
-Example: $
-\begin{bmatrix}
-3 \\
--1
-\end{bmatrix}
-$, $
-\begin{bmatrix}
-w_1 \\
-w_2
-\end{bmatrix}
-$
+Example: $\begin{bmatrix}3\\-1\end{bmatrix}$, $\begin{bmatrix}w_1 \\
+w_2\end{bmatrix}$
 w~1~ and w~2~ are **real numbers**.
 
-### denotation
+### Denotation
+
 $\reals ^n$: $\reals$ 代表实数； ^n^ 代表 vector 中元素的个数。
 $\begin{bmatrix}3\\-1\end{bmatrix}$ 可以记作(3, -1)。但[3, -1] 代表的是 $1*2$ 的 matrix。
 
-### operation
+### Operation
+
 #### sum
 
 $$
@@ -110,6 +104,26 @@ $$
 $$
 
 #### scalar multiple
+
 Given a vector **u** and a real number c, if $\bold{u}=\begin{bmatrix}3 \\ -1 \end{bmatrix}$ and c = 5, then $c\bold{u}=5\begin{bmatrix}3\\-1\end{bmatrix} {=} \begin{bmatrix}15\\-5\end{bmatrix}$. 
 
-It's called the scalar multiple of **u**.
+It's called the scalar multiple of **u**. The number c is called a scalar.
+
+
+#### Parallelogram Rule for Addition
+
+If **u** and **v** in $\reals ^2$ are represented as points in the plane, then **u** + **v** corresponds to the fourth vertex of the parallelogram whose other vertices are **u**, **0**, and **v**.
+
+![enter image description here](https://github.com/Zlisu/Notes/blob/master/Images/parallelogram_rule.png?raw=True)
+
+#### Linear Combinations
+
+Given vectors **v**~1~, **v**~2~, ..., **v**~p~ and given scalars c~1~, c~2~ ... c~p~, the vector **y** defined by
+**y** = c~1~**v**~1~ + c~2~**v**~2~ + ... + c~p~**v**~p~
+is called a linear combination of **v**~1~, **v**~2~, ..., **v**~p~ with **weights** c~1~, c~2~ ... c~p~.
+
+#### Span\{**v**~1~, ..., **v**~p~}
+
+Asking whether a vector **b** is in Span\{**v**~1~, ..., **v**~p~} amounts to asking whether the vector equation
+x~1~**v**~1~ + x~2~**v**~2~ + ... + x~p~**v**~p~ = **b**
+has a solution, or, equivalently, asking whether the linear system with augmented matrix [**v**~1~ **v**~2~ ... **v**~p~    **b**] has a solution.
