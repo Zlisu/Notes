@@ -1,44 +1,50 @@
-
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-* [立体几何初步](#立体几何初步)
-	* [一、平面的基本性质与推论](#一-平面的基本性质与推论)
-		* [1、平面的基本性质：](#1-平面的基本性质)
-		* [2、空间点、直线、平面之间的位置关系：](#2-空间点-直线-平面之间的位置关系)
-		* [3、异面直线：](#3-异面直线)
-	* [二、空间中的平行关系](#二-空间中的平行关系)
-		* [1、直线与平面平行（核心）](#1-直线与平面平行核心)
-		* [2、平面与平面平行](#2-平面与平面平行)
-		* [3、常利用三角形中位线、平行四边形对边、已知直线作一平面找其交线](#3-常利用三角形中位线-平行四边形对边-已知直线作一平面找其交线)
-	* [三、空间中的垂直关系](#三-空间中的垂直关系)
-		* [1、直线与平面垂直](#1-直线与平面垂直)
-		* [2、平面与平面垂直](#2-平面与平面垂直)
-* [1.2 Row reduction and echelon forms](#12-row-reduction-and-echelon-forms)
-	* [Echelon matrix](#echelon-matrix)
-	* [Theorem 1](#theorem-1)
-	* [Pivot positions](#pivot-positions)
-	* [Existence and Uniqueness Questions (Theorem 2)](#existence-and-uniqueness-questions-theorem-2)
-* [1.3 Vector Equations](#13-vector-equations)
-	* [Denotation](#denotation)
-	* [Operation](#operation)
-		* [sum](#sum)
-		* [scalar multiple](#scalar-multiple)
-		* [Parallelogram Rule for Addition](#parallelogram-rule-for-addition)
-	* [Linear Combinations](#linear-combinations)
-	* [Span\{**v**~1~, $\cdot\cdot\cdot$, **v**~p~}](#spanv~1~-cdotcdotcdot-v~p~)
-		* [Geometric Description](#geometric-description)
-* [1.4 The Matrix Equation Ax = b](#14-the-matrix-equation-ax-b)
-	* [Definition](#definition)
-		* [Theorem 3](#theorem-3)
-	* [Existence of Solutions](#existence-of-solutions)
-		* [Theorem 4](#theorem-4)
-	* [Computation of Matrix–Vector Product $A\bold{x}$](#computation-of-matrixvector-product-aboldx)
-		* [Theorem 5](#theorem-5)
+- [立体几何初步](#%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5)
+	- [一、平面的基本性质与推论](#%E4%B8%80%E5%B9%B3%E9%9D%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%E4%B8%8E%E6%8E%A8%E8%AE%BA)
+		- [1、平面的基本性质：](#1%E5%B9%B3%E9%9D%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8)
+		- [2、空间点、直线、平面之间的位置关系：](#2%E7%A9%BA%E9%97%B4%E7%82%B9%E7%9B%B4%E7%BA%BF%E5%B9%B3%E9%9D%A2%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%85%B3%E7%B3%BB)
+		- [3、异面直线：](#3%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF)
+	- [二、空间中的平行关系](#%E4%BA%8C%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%B9%B3%E8%A1%8C%E5%85%B3%E7%B3%BB)
+		- [1、直线与平面平行（核心）](#1%E7%9B%B4%E7%BA%BF%E4%B8%8E%E5%B9%B3%E9%9D%A2%E5%B9%B3%E8%A1%8C%E6%A0%B8%E5%BF%83)
+		- [2、平面与平面平行](#2%E5%B9%B3%E9%9D%A2%E4%B8%8E%E5%B9%B3%E9%9D%A2%E5%B9%B3%E8%A1%8C)
+		- [3、常利用三角形中位线、平行四边形对边、已知直线作一平面找其交线](#3%E5%B8%B8%E5%88%A9%E7%94%A8%E4%B8%89%E8%A7%92%E5%BD%A2%E4%B8%AD%E4%BD%8D%E7%BA%BF%E5%B9%B3%E8%A1%8C%E5%9B%9B%E8%BE%B9%E5%BD%A2%E5%AF%B9%E8%BE%B9%E5%B7%B2%E7%9F%A5%E7%9B%B4%E7%BA%BF%E4%BD%9C%E4%B8%80%E5%B9%B3%E9%9D%A2%E6%89%BE%E5%85%B6%E4%BA%A4%E7%BA%BF)
+	- [三、空间中的垂直关系](#%E4%B8%89%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%9E%82%E7%9B%B4%E5%85%B3%E7%B3%BB)
+		- [1、直线与平面垂直](#1%E7%9B%B4%E7%BA%BF%E4%B8%8E%E5%B9%B3%E9%9D%A2%E5%9E%82%E7%9B%B4)
+		- [2、平面与平面垂直](#2%E5%B9%B3%E9%9D%A2%E4%B8%8E%E5%B9%B3%E9%9D%A2%E5%9E%82%E7%9B%B4)
+- [1.2 Row reduction and echelon forms](#12-row-reduction-and-echelon-forms)
+	- [Echelon matrix](#echelon-matrix)
+	- [Theorem 1](#theorem-1)
+	- [Pivot positions](#pivot-positions)
+	- [Existence and Uniqueness Questions (Theorem 2)](#existence-and-uniqueness-questions-theorem-2)
+- [1.3 Vector Equations](#13-vector-equations)
+	- [Denotation](#denotation)
+	- [Operation](#operation)
+		- [sum](#sum)
+		- [scalar multiple](#scalar-multiple)
+		- [Parallelogram Rule for Addition](#parallelogram-rule-for-addition)
+	- [Linear Combinations](#linear-combinations)
+	- [Span\{**v**~1~, $\cdot\cdot\cdot$, **v**~p~}](#spanv1-cdotcdotcdot-vp)
+		- [Geometric Description](#geometric-description)
+- [1.4 The Matrix Equation Ax = b](#14-the-matrix-equation-ax--b)
+	- [Definition](#definition)
+		- [Theorem 3](#theorem-3)
+	- [Existence of Solutions](#existence-of-solutions)
+		- [Theorem 4](#theorem-4)
+	- [Computation of Matrix–Vector Product $A\bold{x}$](#computation-of-matrix%E2%80%93vector-product-aboldx)
+		- [Theorem 5](#theorem-5)
+- [1.5 Solution sets of linear systems](#15-solution-sets-of-linear-systems)
+	- [Homogeneous Linear Systems](#homogeneous-linear-systems)
+	- [Parametric Vector Form](#parametric-vector-form)
+	- [Solutions of Nonhomogeneous Systems](#solutions-of-nonhomogeneous-systems)
 
 <!-- /code_chunk_output -->
+
+
+
+
 
 
 ## 立体几何初步
@@ -95,6 +101,8 @@
 * 定义：两个平面所成的二面角（从一条直线出发的两个半平面所组成的图形）是直* 二面角（二面角的平面角：以二面角的棱上任一点为端点，在两个半平面内分别作垂直于棱的两条射线所成的角）
 * 判定：一个平面过另一个平面的垂线，则这两个平面垂直
 * 性质：两个平面垂直，则一个平面内垂直于交线的直线与另一个平面垂直
+
+---
 
 ## 1.2 Row reduction and echelon forms
 
@@ -160,6 +168,8 @@ The other variables are called **free variables**.
 **Uniqueness**:
 如果没有 free variable，这个 system 有**唯一解**。
 如果有 free variable 存在，这个system 有**无数个解**。
+
+---
 
 ## 1.3 Vector Equations
 
@@ -231,6 +241,8 @@ If **u** and **v** are nonzero vectors in $\reals ^3$, with **v** not a multiple
 
 ![as a line through the origin](https://github.com/Zlisu/Notes/blob/master/Images/span_v.png?raw=True) ![as a plain through the origin](https://github.com/Zlisu/Notes/blob/master/Images/span_u_v.png?raw=True)
 
+---
+
 ## 1.4 The Matrix Equation Ax = b
 
 ### Definition
@@ -285,4 +297,39 @@ There is an analogous $n \times n$ identity matrix written as $I_n$. $I_n\bold{x
 > If $A$ is an $m \times n$ matris, $\bold{u}$ and $\bold{v}$ are vectors in $\reals ^n$, and $c$ is a scalar, then:
 > a. $A(\bold{u} + \bold{v}) = A\bold{u} + A\bold{v}$
 > b. $A(c\bold{u}) = c(A\bold{u})$
+
+---
+
+## 1.5 Solution sets of linear systems
+
+### Homogeneous Linear Systems
+
+A system of linear equations is said to be **homogeneous** if it can be written in the form $A\bold{x} = \bold{0}$, where $A$ is an $m \times n$ matrix and $\bold{0}$ is the zero vector in $\reals ^m$.
+Such a system $A\bold{x} = \bold{0}$ always has at least one solution, namely, $\bold{x} = \bold{0}$ ($\bold{0}$ is the zero vector in $\reals ^n$). This zero solution is usually called the **trivial solution**. 
+For a given equation $A\bold{x} = \bold{0}$, the important question is whether there exists a nontrivial solution, that is, a nonzero vector $\bold{x}$ that satisfies $A\bold{x} = \bold{0}$. According to Theorem 2,
+> The homogeneous equation $A\bold{x} = \bold{0}$ has a nontrivial solution if and only if the equation has at least one free variable.
+
+
+If the equation $A\bold{x} = \bold{0}$ has only one free variable, the solution set is a line through the origin, as in Figure 1.
+
+A plane through the origin, as in Figure 2, provides a good mental image for the solution set of $A\bold{x} = \bold{0}$ when there are two or more free variables.
+![a line through the origin](https://github.com/Zlisu/Notes/blob/master/Images/one_free_variable.png?raw=True) ![a plain through the origin](https://github.com/Zlisu/Notes/blob/master/Images/two_free_variables.png?raw=True)
+
+
+### Parametric Vector Form
+$10x_1 - 3x_2 - 2x_3 = 0$ is an **implicit** despription of the plane.
+The solution of this single linear equation is:
+$$\bold{x} = \begin{bmatrix}x_1 \\ x_2 \\ x3\end{bmatrix} = x_2 \begin{bmatrix} .3 \\ 1 \\ 0\end{bmatrix} + x_3\begin{bmatrix} .2 \\ 0 \\ 1\end{bmatrix}  (with\enspace x_2, \, x_3 \, free)$$
+
+This is an **explicit** description of the *plane* as the set spanned by u and v.
+
+The equation above is called the parametric vector equation of the plane:
+$$\bold{x} = s\bold{u} + t\bold{v}  (s, \, t\enspace   in \enspace \reals )$$
+the parameters ($s$ and $t$) vary over all real numbers.
+
+$\bold{x} = t\bold{v}$ (with $t$ in $\reals$) is a parametric vector equation of a *line*.(see Figure 1 above)
+
+Whenever a solution set is described explicitly with vectors, we say that the solution is in **parametric vector form.**
+
+### Solutions of Nonhomogeneous Systems
 
