@@ -38,6 +38,7 @@
 - [1.5 Solution sets of linear systems](#15-solution-sets-of-linear-systems)
 	- [Homogeneous Linear Systems](#homogeneous-linear-systems)
 	- [Parametric Vector Form](#parametric-vector-form)
+	- [Solutions of Nonhomogeneous Systems](#solutions-of-nonhomogeneous-systems)
 
 <!-- /code_chunk_output -->
 
@@ -316,4 +317,19 @@ A plane through the origin, as in Figure 2, provides a good mental image for the
 
 
 ### Parametric Vector Form
+$10x_1 - 3x_2 - 2x_3 = 0$ is an **implicit** despription of the plane.
+The solution of this single linear equation is:
+$$\bold{x} = \begin{bmatrix}x_1 \\ x_2 \\ x3\end{bmatrix} = x_2 \begin{bmatrix} .3 \\ 1 \\ 0\end{bmatrix} + x_3\begin{bmatrix} .2 \\ 0 \\ 1\end{bmatrix}  (with\enspace x_2, \, x_3 \, free)$$
+
+This is an **explicit** description of the *plane* as the set spanned by u and v.
+
+The equation above is called the parametric vector equation of the plane:
+$$\bold{x} = s\bold{u} + t\bold{v}  (s, \, t\enspace   in \enspace \reals )$$
+the parameters ($s$ and $t$) vary over all real numbers.
+
+$\bold{x} = t\bold{v}$ (with $t$ in $\reals$) is a parametric vector equation of a *line*.(see Figure 1 above)
+
+Whenever a solution set is described explicitly with vectors, we say that the solution is in **parametric vector form.**
+
+### Solutions of Nonhomogeneous Systems
 
