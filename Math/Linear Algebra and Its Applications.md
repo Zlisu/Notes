@@ -37,8 +37,12 @@
 		- [Theorem 5](#theorem-5)
 - [1.5 Solution sets of linear systems](#15-solution-sets-of-linear-systems)
 	- [Homogeneous Linear Systems](#homogeneous-linear-systems)
+		- [Geometric](#geometric)
 	- [Parametric Vector Form](#parametric-vector-form)
 	- [Solutions of Nonhomogeneous Systems](#solutions-of-nonhomogeneous-systems)
+		- [parametric vector form](#parametric-vector-form)
+		- [translation](#translation)
+		- [Theorem 6](#theorem-6)
 
 <!-- /code_chunk_output -->
 
@@ -309,6 +313,7 @@ Such a system $A\bold{x} = \bold{0}$ always has at least one solution, namely, $
 For a given equation $A\bold{x} = \bold{0}$, the important question is whether there exists a nontrivial solution, that is, a nonzero vector $\bold{x}$ that satisfies $A\bold{x} = \bold{0}$. According to Theorem 2,
 > The homogeneous equation $A\bold{x} = \bold{0}$ has a nontrivial solution if and only if the equation has at least one free variable.
 
+#### Geometric
 
 If the equation $A\bold{x} = \bold{0}$ has only one free variable, the solution set is a line through the origin, as in Figure 1.
 
@@ -333,3 +338,32 @@ Whenever a solution set is described explicitly with vectors, we say that the so
 
 ### Solutions of Nonhomogeneous Systems
 
+#### parametric vector form
+
+The parametric vector equation of the solution set of $\bold{Ax} = \bold{b}$:
+$$\bold{x} = \bold{p} + t\bold{v} \medspace \text{(3)}$$
+The parametric vector equation of the solution set of $\bold{Ax} = \bold{0}$:
+$$\bold{x} = t\bold{v} \medspace \text{(4)}$$
+
+#### translation
+
+Given $\bold{v}$ and $\bold{p}$ in $\reals ^2$ or $\reals ^3$, the effect of adding $\bold{p}$ to $\bold{v}$ is to move $\bold{v}$ in the direction parallel to the line through $\bold{p}$ and $\bold{0}$. We say that $\bold{v}$ is translated by $\bold{p}$ to $\bold{v} + \bold{p}$. See figure 3:
+![adding](https://github.com/Zlisu/Notes/blob/master/Images/adding_p_v.png?raw=True)
+
+If each point on a line $L$ in $\reals ^2$ or $\reals ^3$ is translated by a vector $\bold{p}$, the result is a line parallel to $L$. See figure 4:
+![adding](https://github.com/Zlisu/Notes/blob/master/Images/translated_line.png?raw=True)
+
+Suppose $L$ is the line through $\bold{0}$ and $\bold{v}$, described by equation (4). Adding $\bold{p}$ to each point on $L$ produces the translated line described by equation (3). Note that $\bold{p}$ is on the line in equation (3). We call (3) the equation of the line through p parallel to v. The the solution set of $\bold{Ax} = \bold{b}$ is a line through $\bold{p}$ parallel to the solution set of $\bold{Ax} = \bold{0}$. See figure 5:
+![adding](https://github.com/Zlisu/Notes/blob/master/Images/parallel_solution_sets_1free.png?raw=True)
+
+Figure 6 illustrates the case in which there are two free variables. Even
+when n > 3, our mental image of the solution set of a consistent system $\bold{A} = \bold{b}$ (with $\bold{b}{=}\mathllap{/\,}\bold{0}$) is either a single nonzero point or a line or plane not passing through the origin.
+![adding](https://github.com/Zlisu/Notes/blob/master/Images/parallel_solution_sets_2free.png?raw=True)
+
+#### Theorem 6
+
+> Suppose the equation $A\bold{x} = \bold{b}$ is consistent for some given $\bold{b}$, and let $\bold{p}$ be a solution. Then the solution set of $A\bold{x} = \bold{b}$ is the set of all vectors of the form $\bold{w} = \bold{p} + \bold{v_h}$, where $\bold{v_h}$ is any solution of the homogeneous equation $A\bold{x} = \bold{0}$
+
+
+
+Theorem 6 says that if $A\bold{x} = \bold{b}$ has a solution, then the solution set is obtained by translating the solution set of $A\bold{x} = \bold{0}$, using any particular solution $\bold{p}$ of $A\bold{x} = \bold{b}$ for the translation.
