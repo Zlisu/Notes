@@ -5,8 +5,13 @@
   - [Theory](#theory)
     - [Partitioning variances](#partitioning-variances)
     - [F-ratio](#f-ratio)
-  - [Procedure](#procedure)
+  - [One-way repeated-measures designs using R](#one-way-repeated-measures-designs-using-r)
     - [data](#data)
+    - [Glance](#glance)
+    - [ezANOVA](#ezanova)
+      - [model](#model)
+      - [result:](#result)
+      - [post hoc tests](#post-hoc-tests)
 
 # Repeated measure
 
@@ -85,6 +90,38 @@ names(longBush) <- c("Participant", "Animal", "Retch")
 longBush$Animal <- factor(longBush$Animal, labels = c("Stick Insect", "Kangaroo Testicle", "Fish Eye", "Witchetty Grub"))
 ```
 
+### Glance
+
+```r
+by(longBush$Retch, longBush$Animal, stat.desc)
+```
+Result:
+```
+longBush$Animal: Stick Insect
+     nbr.val     nbr.null       nbr.na          min          max        range          sum       median 
+   8.0000000    0.0000000    0.0000000    5.0000000   12.0000000    7.0000000   65.0000000    8.0000000 
+        mean      SE.mean CI.mean.0.95          var      std.dev     coef.var 
+   8.1250000    0.7891564    1.8660584    4.9821429    2.2320714    0.2747165 
+---------------------------------------------------------------------------------- 
+longBush$Animal: Kangaroo Testicle
+     nbr.val     nbr.null       nbr.na          min          max        range          sum       median 
+   8.0000000    0.0000000    0.0000000    2.0000000    7.0000000    5.0000000   34.0000000    4.5000000 
+        mean      SE.mean CI.mean.0.95          var      std.dev     coef.var 
+   4.2500000    0.6477985    1.5318000    3.3571429    1.8322508    0.4311178 
+---------------------------------------------------------------------------------- 
+longBush$Animal: Fish Eye
+     nbr.val     nbr.null       nbr.na          min          max        range          sum       median 
+   8.0000000    0.0000000    0.0000000    1.0000000    8.0000000    7.0000000   33.0000000    4.0000000 
+        mean      SE.mean CI.mean.0.95          var      std.dev     coef.var 
+   4.1250000    0.9716977    2.2977000    7.5535714    2.7483761    0.6662730 
+---------------------------------------------------------------------------------- 
+longBush$Animal: Witchetty Grub
+     nbr.val     nbr.null       nbr.na          min          max        range          sum       median 
+   8.0000000    0.0000000    0.0000000    1.0000000    9.0000000    8.0000000   46.0000000    6.5000000 
+        mean      SE.mean CI.mean.0.95          var      std.dev     coef.var 
+   5.7500000    1.0307764    2.4373989    8.5000000    2.9154759    0.5070393 
+```
+
 ### ezANOVA
 
 #### model
@@ -131,6 +168,8 @@ Therefore, we should probably go with the Greenhouse–Geisser correction and co
 ```r
 pairwise.t.test(longBush$Retch, longBush$Animal, paired = TRUE, p.adjust.method = "bonferroni")
 ```
+we need to add the option paired = TRUE to reflect the fact that means are dependent (so, we’re asking for paired t-tests rather than independent t-tests).
+
 Result:
 ```
 	Pairwise comparisons using paired t tests 
