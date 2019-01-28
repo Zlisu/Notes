@@ -1,3 +1,27 @@
+# Nested
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+* [Nested](#nested)
+	* [Concepts](#concepts)
+		* [Fixed effects vs Random effects](#fixed-effects-vs-random-effects)
+		* [Comparing model](#comparing-model)
+	* [Analysis](#analysis)
+		* [factor](#factor)
+		* [distribution](#distribution)
+		* [data distribution](#data-distribution)
+		* [Model](#model)
+		* [residuals](#residuals)
+		* [Post hoc comparison](#post-hoc-comparison)
+		* [means and standard deviation](#means-and-standard-deviation)
+		* [Summary](#summary)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Concepts
 
 ### Fixed effects vs Random effects
