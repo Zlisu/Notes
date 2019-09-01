@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>This file shows how to define tables in HTML.</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse:collapse;
+            }
+            th, td {
+                padding:10px;
+            }
+            table {
+                border-spacing: 5px;
+            }
+            table#t04 tr:nth-child(even) {
+                background-color: #eee;
+            }
+            table#t04 tr:nth-child(odd) {
+                background-color:#fff;
+            }
+            table#t04 th {
+                background-color: black;
+                color:whitesmoke;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 style="font-size: 15px">Basic elements</h1>
+        <ul>
+            <li>Each table row is defined with the <b>&lt;tr&gt;</b> tag.</li> 
+            <li>A table header is defined with the <b>&lt;th&gt;</b> tag. 
+                By default, table headings are bold and centered.</li> 
+            <li>A table data/cell is defined with the <b>&lt;td&gt;</b> tag.</li>
+            <br>
+            <li>Use the colspan attribute to make a cell span many columns.</li>
+            <li>Use the rowspan attribute to make a cell span many rows.</li>
+        </ul>
+
+        <table id="t01" style="width: 100%;">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+        </table>
+
+        <p>Note: The &lt;td&gt; elements are the data containers of the table.
+                They can contain all sorts of HTML elements:
+                text, images, lists, other tables, etc.</p>
+        <br>
+
+        <h1 style="font-size:15px">Cells that span many columns</h1>
+        <table id="t02" style="width:100%">
+            <caption>Contacts</caption>
+            <tr>
+                <th>Name</th>
+                <th colspan="2">Telephone</th>
+            </tr>
+            <tr>
+                <td>Bill Gates</td>
+                <td>9177690000</td>
+                <td>9177691111</td>
+            </tr>
+        </table>
+        <br>
+
+        <h1 style="font-size:15px;">Cells that span many rows</h1>
+        <table id="t03">
+            <tr>
+                <th>Name:</th>
+                <td>Bill Gates</td>
+            </tr>
+            <tr>
+                <th rowspan="2">Telephone:</th>
+                <td>55775854</td>
+            </tr>
+            <tr>
+                <td>9177690000</td>
+            </tr>
+        </table>
+        <br>
+
+        <h1 style="font-size:15px;">Specify a table's format by its id.</h1>
+        <table id="t04" style="width: 100%;">
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>80</td>
+                </tr>
+            </table>
+        <p>Note that the style of this table is specified by its id "t03" in the &lt;style&gt; section inside
+            the &lt;head&gt; section.
+        </p>
+    </body>
+
+
+
+</html>
