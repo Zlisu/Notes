@@ -5,7 +5,9 @@
         <title>My first HTML</title>
         <meta charset="UTF-8">
         <style>
-        body {background-color:#212121;color:whitesmoke;}
+        body {background-color:#212121;color:whitesmoke;
+        }
+        a {color:whitesmoke;}
         .cities {
             background-color: black;
             color:rgb(206, 5, 5);
@@ -17,13 +19,14 @@
             font: size 120%;
             color: lightblue;
         }
+        #c9 {
+            color:lightcoral;
+            padding:30px;
+        }
         </style>
     </head>
 
     <body>
-        <a href="#C1">Chapter 1</a> <br>
-        <a href="#C2">Chapter 2</a>
-
         <h2 id="C1">1. Basic Tags and Elements</h1>
         <p>A very first paragraph.</p>
         <p>Here is the second paratraph. Now start a <br />new line.</p>
@@ -122,7 +125,7 @@
 
         <h2 id="C7">7. Block and Inline elements</h2>
 
-        <div style="background-color:darkgray;color:darkred;padding:20px;">
+        <div style="background-color:rgba(0,0,0,0.4);color:darkred;padding:20px;">
             <h3>&lt;div&gt; element</h3>
             <p>The &lt;div&gt; element is often used as a container for other HTML elements.</p>
             <p>When used together with CSS, the &lt;div&gt; element can be used to style blocks of content:</p>
@@ -134,11 +137,12 @@
             </p><br>
         </div>
 
-        <h2 id="c8">class</h2>
+        <h2 id="c8">8. class</h2>
         <h3>Use <span class="note">class</span> attribute for multiple elements</h3>
         <p>All HTML elements with the same class attribute will get the same style.
             The style of a class is defined in the &lt;style&gt; element under &lt;head&gt;.
         </p>
+
         <div class="cities">
             <h3>Beijing</h3>
             <p>Beijing is her hometown.</p>
@@ -159,6 +163,24 @@
             <li>Different tags, like &lt;h2&gt; and &lt;p&gt;, can have the same class name and thereby share the same style</li>
         </ul>
         
+        <h2 id="C9">9. ID</h2>
+        <p>The id value can be used by CSS and JavaScript to perform certain tasks for the element with the specific id value.
+            The id value must be <b>unique</b>.            
+        </p>
+        <p>In CSS, to select an element with <b>a specific id</b>, write a hash (#) character, followed by the id of the element</p>
+        
+        <h3>Difference between id and class:</h3>
+        <p>An HTML element can only have one unique id that belongs to that single 
+            element, while a <b>class</b> name can be used by <b>multiple elements</b>.</p>
+        
+        <h3>Bookmarks with ID and Links</h3>
+        <p>links to a part within the same html page:</p>
+        <a href="#C1">Chapter 1</a> <br>
+        <a href="#C2">Chapter 2</a>
+
+        <p>links to another html page:</p>
+        <a href="table.htm#t01">Jump to table 1 in the table.htm</a>
+
     </body>
 
     
