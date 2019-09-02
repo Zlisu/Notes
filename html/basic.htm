@@ -3,10 +3,13 @@
 
     <head>
         <title>My first HTML</title>
-        <meta charset="UTF-8"> 
+        <meta charset="UTF-8">
+        <style>
+        body {background-color:#212121;color:whitesmoke;}
+        </style>
     </head>
 
-    <body style="background-color:rgba(0, 0, 0, 0.02);">
+    <body>
         <a href="#C1">Chapter 1</a> <br>
         <a href="#C2">Chapter 2</a>
 
@@ -14,7 +17,9 @@
         <p>A very first paragraph.</p>
         <p>Here is the second paratraph. Now start a <br />new line.</p>
         <p title="this is the title">A paragraph can have a title too. It's called a "tooltip".</p>
-        
+        <br>
+
+
         <h2 id="C2">2. Style</h2>
         <h3>2.1. font size and type:</h3>
         <p style="font-family:Arial, Helvetica, sans-serif;">Setting <b>font type</b> with style="font-family:font_type;" attribute.</p>
@@ -23,6 +28,7 @@
         <h1 style="font-size: 15px">This is how to change the font size of a heading</h1>
 
         <h3>2.2. alignment:</h3>
+        <p>default aligned to left</p>
         <p style="text-align: center;">centered alignment</p>
         <p style="text-align:right;">align to right</p>
         
@@ -48,7 +54,7 @@
                         and it preserves both spaces      and line breaks.
                 </pre>
         </p>
-        <hr />
+        <hr /><br>
 
         <h2 id="C4">4. Quatation and Citation</h2>
         <p>Sir Winston Churchill said <q>To improve is to change, so to be perfect is to have changed oftern.</q></p>
@@ -73,7 +79,7 @@
             Box 564, Disneyland<br>
             USA
         </address>
-        <hr>
+        <hr><br>
 
         <h2 id="C5">5. Colors</h2>
         <h3 style="color:floralwhite;background-color:dodgerblue;"> A heading can have background color and text color.</h3>
@@ -82,9 +88,9 @@
         <p style="border:2px solid violet;">Of course it also works on <br>
         a parabraph</p>
         <p style="background-color: rgba(255, 99, 71, 0.2);">use RGBA or HSLA for transparency.</p>
+        <hr><br>
 
 
-        <hr>
         <h2 id="C6">6. Links and pictures</h2>
         <p>This is how to add a link <a href="google.com/" title="Google Search">click here</a></p><br> 
         
@@ -98,10 +104,31 @@
         <br>
         <img src="https://pic1.zhimg.com/v2-2d8132daf1290a8e4e1e675d2008e15a_1200x500.jpg"
                 width="200"> <br>
-        <img src="/pictures/riding.jpg" alt="riding motocycle"
+        <img src="pictures/riding.jpg" alt="riding motocycle"
             style="width:128px;">
+        <hr><br>
+
+
+        <h2 id="C7">7. Block and Inline elements</h2>
+
+        <div style="background-color:darkgray;color:darkred;padding:20px;">
+            <h3>&lt;div&gt; element</h3>
+            <p>The &lt;div&gt; element is often used as a container for other HTML elements.</p>
+            <p>When used together with CSS, the &lt;div&gt; element can be used to style blocks of content:</p>
+            
+            <h3>&lt;span&gt; element</h3>
+            <p>The &lt;span&gt; element is often used as a container for some text.
+                    When used <span style="color:rgb(0, 4, 255);""> together with CSS</span>, 
+                    the &lt;span&gt; element can be used to <span style="color:green;"> parts of the text.</span>
+            </p>
+        </div>
+
+
     </body>
 
+    x-special/nautilus-clipboard
+    copy
 
+    
 
 </html>
