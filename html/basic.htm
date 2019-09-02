@@ -6,6 +6,17 @@
         <meta charset="UTF-8">
         <style>
         body {background-color:#212121;color:whitesmoke;}
+        .cities {
+            background-color: black;
+            color:rgb(206, 5, 5);
+            margin:20px;
+            padding:20px;
+            font-size: 18px;
+        }
+        span.note {
+            font: size 120%;
+            color: lightblue;
+        }
         </style>
     </head>
 
@@ -120,14 +131,35 @@
             <p>The &lt;span&gt; element is often used as a container for some text.
                     When used <span style="color:rgb(0, 4, 255);""> together with CSS</span>, 
                     the &lt;span&gt; element can be used to <span style="color:green;"> parts of the text.</span>
-            </p>
+            </p><br>
         </div>
 
+        <h2 id="c8">class</h2>
+        <h3>Use <span class="note">class</span> attribute for multiple elements</h3>
+        <p>All HTML elements with the same class attribute will get the same style.
+            The style of a class is defined in the &lt;style&gt; element under &lt;head&gt;.
+        </p>
+        <div class="cities">
+            <h3>Beijing</h3>
+            <p>Beijing is her hometown.</p>
+        </div>
+        <div class="cities">
+            <h3>London</h3>
+            <p>London is the capital of England.</p>
+        </div>
 
+        <h3>Use <span class="note">class</span> attribute in line</h3>
+        <p>The &lt;class&gt; attribute can also be used on <b>inline elements</b>.
+            The style of a inline class is also defined in the &lt;style&gt; element under &lt;head&gt;</p>
+        
+        <ul>
+            <li>The class name is case sensitive!</li>
+            <li>In CSS, to select elements with a specific class, write a period (.) character, followed by the name of the class</li>
+            <li>HTML elements can have more than one class name, each class name must be separated by a space.</li>
+            <li>Different tags, like &lt;h2&gt; and &lt;p&gt;, can have the same class name and thereby share the same style</li>
+        </ul>
+        
     </body>
-
-    x-special/nautilus-clipboard
-    copy
 
     
 
