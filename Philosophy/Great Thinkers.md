@@ -12,6 +12,14 @@
 
 广告就是让你误以为你需要得到这得到那才能快乐。
 
+## Augustine 奥古斯都
+
+原名盖乌斯·屋大維·圖里努斯（Gaius Octavius Thurinus).
+
+罗马人认为挣钱既反映了 parctical ability 又在一定程度上反映了 inner virtue，因此展示财富是荣耀的。奥古斯都愤怒地反对一般罗马人的观点。
+
+1. We're all lustful, mad, erratic, deluded deviants with no earthly chance of happiness.
+
 
 
    
