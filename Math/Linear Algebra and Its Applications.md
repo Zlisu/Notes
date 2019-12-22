@@ -2,40 +2,60 @@
 
 <!-- code_chunk_output -->
 
-- [1.2 Row reduction and echelon forms](#12-row-reduction-and-echelon-forms)
-  - [Echelon matrix](#echelon-matrix)
-  - [Theorem 1](#theorem-1)
-  - [Pivot positions](#pivot-positions)
-  - [Existence and Uniqueness Questions (Theorem 2)](#existence-and-uniqueness-questions-theorem-2)
-- [1.3 Vector Equations](#13-vector-equations)
-  - [Denotation](#denotation)
-  - [Operation](#operation)
-    - [sum](#sum)
-    - [scalar multiple](#scalar-multiple)
-    - [Parallelogram Rule for Addition](#parallelogram-rule-for-addition)
-  - [Linear Combinations](#linear-combinations)
-  - [Span\{**v**~1~, $\cdot\cdot\cdot$, **v**~p~}](#spanv~1~-cdotcdotcdot-v~p~)
-    - [Geometric Description](#geometric-description)
-- [1.4 The Matrix Equation Ax = b](#14-the-matrix-equation-ax-b)
-  - [Definition](#definition)
-    - [Theorem 3](#theorem-3)
-  - [Existence of Solutions](#existence-of-solutions)
-    - [Theorem 4](#theorem-4)
-  - [Computation of Matrix–Vector Product $A\bold{x}$](#computation-of-matrixvector-product-aboldx)
-    - [Theorem 5](#theorem-5)
-- [1.5 Solution sets of linear systems](#15-solution-sets-of-linear-systems)
-  - [Homogeneous Linear Systems](#homogeneous-linear-systems)
-    - [Geometric](#geometric)
-  - [Parametric Vector Form](#parametric-vector-form)
-  - [Solutions of Nonhomogeneous Systems](#solutions-of-nonhomogeneous-systems)
-    - [parametric vector form](#parametric-vector-form-1)
-    - [translation](#translation)
-    - [Theorem 6](#theorem-6)
+- [Chapter 1 Linear Equations in Linear Algebra](#chapter-1-linear-equations-in-linear-algebra)
+  - [1.2 Row reduction and echelon forms](#12-row-reduction-and-echelon-forms)
+    - [Echelon matrix](#echelon-matrix)
+    - [Theorem 1](#theorem-1)
+    - [Pivot positions](#pivot-positions)
+    - [Existence and Uniqueness Questions (Theorem 2)](#existence-and-uniqueness-questions-theorem-2)
+  - [1.3 Vector Equations](#13-vector-equations)
+    - [Denotation](#denotation)
+    - [Operation](#operation)
+      - [sum](#sum)
+      - [scalar multiple](#scalar-multiple)
+      - [Parallelogram Rule for Addition](#parallelogram-rule-for-addition)
+    - [Linear Combinations](#linear-combinations)
+    - [Span\{**v**~1~, $\cdot\cdot\cdot$, **v**~p~}](#spanv~1~-cdotcdotcdot-v~p~)
+      - [Geometric Description](#geometric-description)
+  - [1.4 The Matrix Equation Ax = b](#14-the-matrix-equation-ax-b)
+    - [Definition](#definition)
+      - [Theorem 3](#theorem-3)
+    - [Existence of Solutions](#existence-of-solutions)
+      - [Theorem 4](#theorem-4)
+    - [Computation of Matrix–Vector Product $A\bold{x}$](#computation-of-matrixvector-product-aboldx)
+      - [Theorem 5](#theorem-5)
+  - [1.5 Solution sets of linear systems](#15-solution-sets-of-linear-systems)
+    - [Homogeneous Linear Systems](#homogeneous-linear-systems)
+      - [Geometric](#geometric)
+    - [Parametric Vector Form](#parametric-vector-form)
+    - [Solutions of Nonhomogeneous Systems](#solutions-of-nonhomogeneous-systems)
+      - [parametric vector form](#parametric-vector-form-1)
+      - [translation](#translation)
+      - [Theorem 6](#theorem-6)
+  - [1.7 Linear Independence](#17-linear-independence)
+    - [Definition](#definition-1)
+    - [Sets of Two or More Vectors](#sets-of-two-or-more-vectors)
+      - [Theorem 7](#theorem-7)
+      - [Theorem 8](#theorem-8)
+      - [Theorem 9](#theorem-9)
+  - [1.8 Introduction to Linear Transformations](#18-introduction-to-linear-transformations)
+    - [Definition](#definition-2)
+  - [1.9 The Matrix of A Linear Transformation](#19-the-matrix-of-a-linear-transformation)
+    - [Theorem 10](#theorem-10)
+    - [Onto](#onto)
+    - [one-to-one](#one-to-one)
+      - [Thorem 11](#thorem-11)
+      - [Thorem 12](#thorem-12)
+- [Chapter 2 Matrix Algebra](#chapter-2-matrix-algebra)
+  - [2.1 Matrix Operations](#21-matrix-operations)
+    - [Theorem 1](#theorem-1-1)
+    - [Theorem 2](#theorem-2)
 
 <!-- /code_chunk_output -->
 
 
 ---
+# Chapter 1 Linear Equations in Linear Algebra
 
 ## 1.2 Row reduction and echelon forms
 
@@ -216,6 +236,7 @@ The equation $A\bold{x} = \bold{b}$ has a solution if and only if $\bold{b}$ is 
 
 Note:
 the sentence “The columns of $A$ span $\reals ^m$" means that every $\bold{b}$ in $\reals ^m$ is a linear combination of the columns of A.
+
 In general, a set of vectors $\{\bold{v}_1, ..., \bold{v}_p\}$ in $\reals ^m$ spans or generates $\reals ^m$ if every vector in $\reals ^m$ is a linear combination of  $\bold{v}_1, ..., \bold{v}_p$ - that is, if $Span\{\bold{v}_1, ..., \bold{v}_p\} = \reals ^m$.
 
 ### Computation of Matrix–Vector Product $A\bold{x}$
@@ -249,8 +270,8 @@ If the equation $A\bold{x} = \bold{0}$ has only one free variable, the solution 
 A plane through the origin, as in Figure 2, provides a good mental image for the solution set of $A\bold{x} = \bold{0}$ when there are two or more free variables.
 ![a line through the origin](https://github.com/Zlisu/Notes/blob/master/Images/one_free_variable.png?raw=True) ![a plain through the origin](https://github.com/Zlisu/Notes/blob/master/Images/two_free_variables.png?raw=True)
 
-
 ### Parametric Vector Form
+
 $10x_1 - 3x_2 - 2x_3 = 0$ is an **implicit** despription of the plane.
 The solution of this single linear equation is:
 $$\bold{x} = \begin{bmatrix}x_1 \\ x_2 \\ x3\end{bmatrix} = x_2 \begin{bmatrix} .3 \\ 1 \\ 0\end{bmatrix} + x_3\begin{bmatrix} .2 \\ 0 \\ 1\end{bmatrix}  (with\enspace x_2, \, x_3 \, free)$$
@@ -296,3 +317,100 @@ when n > 3, our mental image of the solution set of a consistent system $\bold{A
 
 
 Theorem 6 says that if $A\bold{x} = \bold{b}$ has a solution, then the solution set is obtained by translating the solution set of $A\bold{x} = \bold{0}$, using any particular solution $\bold{p}$ of $A\bold{x} = \bold{b}$ for the translation.
+
+---
+
+## 1.7 Linear Independence
+
+### Definition
+
+> An indexed set of vectors $\{\bold{v}_1, ..., \bold{v}_p\}$ in $\reals ^n$ is said to be linearly independent if the vectors equation $$x_1\bold v_1 + x_2\bold v_2 + ... + x_p\bold v_p = \bold0 $$ has only the trivial solution. 
+> 
+> The set $\{\bold v_1, ..., \bold v_p\}$ is said to be linearly dependent if there exist weights $c_1, ..., c_p$, not all zero, such that $$c_1\bold v_1 + c_2\bold v_2 + ... + c_p\bold v_p = \bold 0 $$
+
+### Sets of Two or More Vectors
+
+#### Theorem 7
+
+> An indexed set $S = \{\bold v_1, ..., \bold v_p\}$ of two or more vectors is linearly dependent if and only if at least one of the vectors in $S$ is a linear combination of the others. In fact if $S$ is linearly dependent and $\bold v_1 \neq\bold 0$, then some $\bold v_j$ (with $j > 1$) is a linear combination of the preceding vectors, $\bold v_1, ..., \bold v_{j-1}$.
+
+#### Theorem 8
+
+> If a set contains more vectors than there are entries in each vector, then the set is linearly dependent. That is, any set $\{\bold v_1, ..., \bold v_p\}$ in $\reals ^n$ is linearly dependent if $p > n$.
+
+#### Theorem 9
+
+> If a set $S = \{\bold v_1, ..., \bold v_p\}$ in $\reals ^n$ contains the zero vector, then the set is linearly dependent.
+
+---
+
+## 1.8 Introduction to Linear Transformations
+
+### Definition
+
+> A transformation (or mapping) $T$ is **linear** if:
+> (i) $T(\bold u + \bold b) = T(\bold u) + T(\bold v)$
+> (ii) $T(c\bold u) = cT(\bold u)$
+
+Every **matrix transformation** is a **linear transformation**.
+
+## 1.9 The Matrix of A Linear Transformation
+
+### Theorem 10
+
+> Let $T: \reals ^n \rarr \reals ^m$ be a linear transformation. Then there exists a unique matrix $A$ such that
+> $T(\bold x) = A\bold x $ for all $\bold x$ in $\reals ^n$
+> In fact, $A$ is the $m * n$ matrix whose *j*th column is the vector $T(\bold e_j)$, where $\bold e_j$ is the $j$th column of the identity matrix in $\reals ^n$: $$A = [T(\bold e_1) \quad ... \quad T(\bold e_n)]$$
+
+$A = [T(\bold e_1) \quad ... \quad T(\bold e_n)]$ is called the **standard matrix for the linear transformation** $T$.
+
+### Onto
+
+> A mapping $T: \reals ^n \rarr \reals ^m$ is said to be **onto** $\reals ^m$ if each **b** in $\reals ^m$ is the image of at least *one* **x** in $\reals ^n$.
+
+### one-to-one
+
+> A mapping $T: \reals ^n \rarr \reals ^m$ is said to be **one-to-one** if each **b** in $\reals ^m$ is the image of *at most one* **x** in $\reals ^n$.
+
+#### Thorem 11
+
+> Let $T: \reals ^n \rarr \reals ^m$ be a linear transformation. Then $T$ is one-to-one if and only if the equation $T(\bold x) = \bold 0$ has only the trivial solution.
+
+(page 77)
+
+#### Thorem 12
+
+> Let $T: \reals ^n \rarr \reals ^m$ be a linear transformation, and let $A$ be the standard matrix for $T$. Then:
+> 
+> a. $T$ maps $\reals ^n to \reals ^m$ if and only if the columns of $A$ span $\reals ^m$;
+> b. $T$ is one-to-one if and only if the columns of $A$ are linearly independent.
+
+(page 78)
+
+---
+
+# Chapter 2 Matrix Algebra
+
+## 2.1 Matrix Operations
+
+### Theorem 1
+
+>Let $A$, $B$, and $C$ be matrices of the same size, and let $r$ and $s$ be scalars.
+>
+>a. $A + B = B + A$
+b. $(A + B) + C = A + (B + C)$
+c. $A + 0 = A$
+d. $r(A + B) = rA + rB$
+e. $(r + s)A = rA + sA$
+f. $r(sA) = (rs)A$
+
+### Theorem 2
+
+>Let $A$ be an $m \times n$ matrix, and let $B$ and $C$ have sizes for which the indicated sums and products are defined.
+>
+>a. $A(BC) = (AB)C$   
+b. $A(B + C) = AB + AC$
+c. $(B + C)A = BA + CA$
+d. $r(AB) = (rA)B = A(rB)$
+e. $I_mA = A = AI_n$
+
