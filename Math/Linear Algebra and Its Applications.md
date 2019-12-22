@@ -2,109 +2,38 @@
 
 <!-- code_chunk_output -->
 
-* [立体几何初步](#立体几何初步)
-	* [一、平面的基本性质与推论](#一-平面的基本性质与推论)
-		* [1、平面的基本性质：](#1-平面的基本性质)
-		* [2、空间点、直线、平面之间的位置关系：](#2-空间点-直线-平面之间的位置关系)
-		* [3、异面直线：](#3-异面直线)
-	* [二、空间中的平行关系](#二-空间中的平行关系)
-		* [1、直线与平面平行（核心）](#1-直线与平面平行核心)
-		* [2、平面与平面平行](#2-平面与平面平行)
-		* [3、常利用三角形中位线、平行四边形对边、已知直线作一平面找其交线](#3-常利用三角形中位线-平行四边形对边-已知直线作一平面找其交线)
-	* [三、空间中的垂直关系](#三-空间中的垂直关系)
-		* [1、直线与平面垂直](#1-直线与平面垂直)
-		* [2、平面与平面垂直](#2-平面与平面垂直)
-* [1.2 Row reduction and echelon forms](#12-row-reduction-and-echelon-forms)
-	* [Echelon matrix](#echelon-matrix)
-	* [Theorem 1](#theorem-1)
-	* [Pivot positions](#pivot-positions)
-	* [Existence and Uniqueness Questions (Theorem 2)](#existence-and-uniqueness-questions-theorem-2)
-* [1.3 Vector Equations](#13-vector-equations)
-	* [Denotation](#denotation)
-	* [Operation](#operation)
-		* [sum](#sum)
-		* [scalar multiple](#scalar-multiple)
-		* [Parallelogram Rule for Addition](#parallelogram-rule-for-addition)
-	* [Linear Combinations](#linear-combinations)
-	* [Span\{**v**~1~, $\cdot\cdot\cdot$, **v**~p~}](#spanv~1~-cdotcdotcdot-v~p~)
-		* [Geometric Description](#geometric-description)
-* [1.4 The Matrix Equation Ax = b](#14-the-matrix-equation-ax-b)
-	* [Definition](#definition)
-		* [Theorem 3](#theorem-3)
-	* [Existence of Solutions](#existence-of-solutions)
-		* [Theorem 4](#theorem-4)
-	* [Computation of Matrix–Vector Product $A\bold{x}$](#computation-of-matrixvector-product-aboldx)
-		* [Theorem 5](#theorem-5)
-* [1.5 Solution sets of linear systems](#15-solution-sets-of-linear-systems)
-	* [Homogeneous Linear Systems](#homogeneous-linear-systems)
-		* [Geometric](#geometric)
-	* [Parametric Vector Form](#parametric-vector-form)
-	* [Solutions of Nonhomogeneous Systems](#solutions-of-nonhomogeneous-systems)
-		* [parametric vector form](#parametric-vector-form-1)
-		* [translation](#translation)
-		* [Theorem 6](#theorem-6)
+- [1.2 Row reduction and echelon forms](#12-row-reduction-and-echelon-forms)
+  - [Echelon matrix](#echelon-matrix)
+  - [Theorem 1](#theorem-1)
+  - [Pivot positions](#pivot-positions)
+  - [Existence and Uniqueness Questions (Theorem 2)](#existence-and-uniqueness-questions-theorem-2)
+- [1.3 Vector Equations](#13-vector-equations)
+  - [Denotation](#denotation)
+  - [Operation](#operation)
+    - [sum](#sum)
+    - [scalar multiple](#scalar-multiple)
+    - [Parallelogram Rule for Addition](#parallelogram-rule-for-addition)
+  - [Linear Combinations](#linear-combinations)
+  - [Span\{**v**~1~, $\cdot\cdot\cdot$, **v**~p~}](#spanv~1~-cdotcdotcdot-v~p~)
+    - [Geometric Description](#geometric-description)
+- [1.4 The Matrix Equation Ax = b](#14-the-matrix-equation-ax-b)
+  - [Definition](#definition)
+    - [Theorem 3](#theorem-3)
+  - [Existence of Solutions](#existence-of-solutions)
+    - [Theorem 4](#theorem-4)
+  - [Computation of Matrix–Vector Product $A\bold{x}$](#computation-of-matrixvector-product-aboldx)
+    - [Theorem 5](#theorem-5)
+- [1.5 Solution sets of linear systems](#15-solution-sets-of-linear-systems)
+  - [Homogeneous Linear Systems](#homogeneous-linear-systems)
+    - [Geometric](#geometric)
+  - [Parametric Vector Form](#parametric-vector-form)
+  - [Solutions of Nonhomogeneous Systems](#solutions-of-nonhomogeneous-systems)
+    - [parametric vector form](#parametric-vector-form-1)
+    - [translation](#translation)
+    - [Theorem 6](#theorem-6)
 
 <!-- /code_chunk_output -->
 
-
-
-
-
-
-## 立体几何初步
-
-### 一、平面的基本性质与推论
-#### 1、平面的基本性质：
-
-* 公理1 如果一条直线的两点在一个平面内，那么这条直线在这个平面内；
-* 公理2 过不在一条直线上的三点，有且只有一个平面；
-* 公理3 如果两个不重合的平面有一个公共点，那么它们有且只有一条过该点的公共直线。
-
-#### 2、空间点、直线、平面之间的位置关系：
-
-* 直线与直线-平行、相交、异面；
-* 直线与平面-平行、相交、直线属于该平面（线在面内，最易忽视）；
-* 平面与平面-平行、相交。
-  
-#### 3、异面直线：
-
-* 平面外一点A与平面一点B的连线和平面内不经过点B的直线是异面直线（判定）；
-* 所成的角范围(0，90] 度（平移法，作平行线相交得到夹角或其补角）；
-* 两条直线不是异面直线，则两条直线平行或相交（反证）；
-* 异面直线不同在任何一个平面内。
-* 求异面直线所成的角：平移法，把异面问题转化为相交直线的夹角
-
-### 二、空间中的平行关系
-
-#### 1、直线与平面平行（核心）
-
-* 定义：直线和平面没有公共点
-* 判定：不在一个平面内的一条直线和平面内的一条直线平行，则该直线平行于此平面（由线线平行得出）
-* 性质：一条直线和一个平面平行，经过这条直线的平面和这个平面相交，则这条直线就和两平面的交线平行
-
-#### 2、平面与平面平行
-
-* 定义：两个平面没有公共点
-* 判定：一个平面内有两条相交直线平行于另一个平面，则这两个平面平行
-* 性质：两个平面平行，则其中一个平面内的直线平行于另一个平面；如果两个平行平面同时与第三个平面相交，那么它们的交线平行。
-
-#### 3、常利用三角形中位线、平行四边形对边、已知直线作一平面找其交线
-
-### 三、空间中的垂直关系
-
-#### 1、直线与平面垂直
-
-* 定义：直线与平面内任意一条直线都垂直
-* 判定：如果一条直线与一个平面内的两条相交的直线都垂直，则该直线与此平面垂直
-* 性质：垂直于同一直线的两平面平行
-* 推论：如果在两条平行直线中，有一条垂直于一个平面，那么另一条也垂直于这个平面
-* 直线和平面所成的角：[0，90] 度，平面内的一条斜线和它在平面内的射影说成的锐角，特别规定垂直90度，在平面内或者平行0度
-  
-#### 2、平面与平面垂直
-
-* 定义：两个平面所成的二面角（从一条直线出发的两个半平面所组成的图形）是直* 二面角（二面角的平面角：以二面角的棱上任一点为端点，在两个半平面内分别作垂直于棱的两条射线所成的角）
-* 判定：一个平面过另一个平面的垂线，则这两个平面垂直
-* 性质：两个平面垂直，则一个平面内垂直于交线的直线与另一个平面垂直
 
 ---
 
